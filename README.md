@@ -39,4 +39,4 @@ It displays a user profile with their name, photo, bio, hobbies, dislikes, and c
 
 _Adebiyi Ayomide_  
 Frontend Developer  
-[LinkedIn](https://linkedin.com/in/Adebiyi Ayomide) • [GitHub](https://github.com/Ifaniyi)
+[LinkedIn](https://linkedin.com/in/adebiyiayomide) • [GitHub](https://github.com/Ifaniyi)
