@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Card - Adebiyi Ayomide</title>
+    <link rel="stylesheet" href="Card.css">
+</head>
+<body>
+    <article class="profile-card" data-testid="test-profile-card">
+       
+        <header class="profile-header">
+            <h2 data-testid="test-user-name">Adebiyi Ayomide</h2>
+        </header>
+
+        <div class="profile-content">
+            <figure class="profile-avatar">
+                <img 
+                    src="image/photo.jpg" 
+                    alt="img" 
+                    data-testid="test-user-avatar"
+                >
+                <figcaption>Software Developer</figcaption>
+            </figure>
+
+            <div class="profile-info">
+                <p class="profile-bio" data-testid="test-user-bio">
+                     I’m a frontend developer who loves building clean, 
+                     accessible, and fast web apps.
+                </p>
+
+                <div class="profile-time">
+                    <p class="time">
+                        Current Time (ms): 
+                        <span data-testid="test-user-time" id="time"></span>
+                    </p>
+                    
+                </div>
+
+                <nav class="profile-social" data-testid="test-user-social-links">
+                    <h3>Connect with me:</h3>
+                    <ul>
+                        <li>
+                            <a 
+                                href="https://twitter.com/johndoe" 
+                                target="_blank" 
+                                rel="noopener noreferrer"
+                                data-testid="test-user-social-twitter"
+                            >
+                                Twitter
+                            </a>
+                        </li>
+                        <li>
+                            <a 
+                                href="https://facebook.com/johndoe" 
+                                target="_blank" 
+                                rel="noopener noreferrer"
+                                data-testid="test-user-social-facebook"
+                            >
+                                Facebook
+                            </a>
+                        </li>
+                        <li>
+                            <a 
+                                href="https://linkedin.com/in/johndoe" 
+                                target="_blank" 
+                                rel="noopener noreferrer"
+                                data-testid="test-user-social-linkedin"
+                            >
+                                LinkedIn
+                            </a>
+                        </li>
+                        <li>
+                            <a 
+                                href="https://github.com/johndoe" 
+                                target="_blank" 
+                                rel="noopener noreferrer"
+                                data-testid="test-user-social-github"
+                            >
+                                GitHub
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+
+                <section class="profile-hobbies" data-testid="test-user-hobbies">
+                    <h3>My Hobbies</h3>
+                    <ul>
+                        <li>Coding and building projects</li>
+                        <li>Playing video games</li>
+                        <li>Reading tech blogs</li>
+                        <li>Watching football</li>
+                        <li>Listening to music</li>
+                    </ul>
+                </section>
+
+                <section class="profile-dislikes" data-testid="test-user-dislikes">
+                    <h3>Things I Dislike</h3>
+                    <ul>
+                        <li>Bugs in production</li>
+                        <li>Slow internet connection</li>
+                        <li>Traffic jams</li>
+                        <li>Inconsistent code formatting</li>
+                        <li>Unnecessary meetings</li>
+                    </ul>
+                </section>
+            </div>
+        </div>
+    </article>
+
+   <script>
+    const timeEl = document.getElementById("time");
+    function updateTime() {
+      timeEl.textContent = Date.now();
+    }
+    updateTime();
+    setInterval(updateTime, 1000);
+  </script>
+</body>
+</html>
