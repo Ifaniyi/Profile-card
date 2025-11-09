@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Profile Card - Adebiyi Ayomide</title>
-    <link rel="stylesheet" href="Card.css">
+    <link rel="stylesheet" href="../css/Card.css">
 </head>
 <body>
     <article class="profile-card" data-testid="test-profile-card">
@@ -16,7 +16,7 @@
         <div class="profile-content">
             <figure class="profile-avatar">
                 <img 
-                    src="image/photo.jpg" 
+                    src="../image/photo.jpg" 
                     alt="img" 
                     data-testid="test-user-avatar"
                 >
@@ -42,7 +42,7 @@
                     <ul>
                         <li>
                             <a 
-                                href="https://twitter.com/johndoe" 
+                                href="https://twitter.com/adebiyiayomide" 
                                 target="_blank" 
                                 rel="noopener noreferrer"
                                 data-testid="test-user-social-twitter"
@@ -52,7 +52,7 @@
                         </li>
                         <li>
                             <a 
-                                href="https://facebook.com/johndoe" 
+                                href="https://facebook.com/adebiyiayomide" 
                                 target="_blank" 
                                 rel="noopener noreferrer"
                                 data-testid="test-user-social-facebook"
@@ -62,7 +62,7 @@
                         </li>
                         <li>
                             <a 
-                                href="https://linkedin.com/in/johndoe" 
+                                href="https://linkedin.com/in/adebiyiayomide" 
                                 target="_blank" 
                                 rel="noopener noreferrer"
                                 data-testid="test-user-social-linkedin"
@@ -72,7 +72,7 @@
                         </li>
                         <li>
                             <a 
-                                href="https://github.com/johndoe" 
+                                href="https://github.com/adebiyiayomide" 
                                 target="_blank" 
                                 rel="noopener noreferrer"
                                 data-testid="test-user-social-github"
@@ -108,13 +108,6 @@
         </div>
     </article>
 
-   <script>
-    const timeEl = document.getElementById("time");
-    function updateTime() {
-      timeEl.textContent = Date.now();
-    }
-    updateTime();
-    setInterval(updateTime, 1000);
-  </script>
+   <script src="../js/script.js"></script>
 </body>
 </html>
