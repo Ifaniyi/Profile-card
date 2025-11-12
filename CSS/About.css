@@ -1,0 +1,157 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 30px;
+}
+
+/* HEADER & FOOTER */
+.site-header {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.primary-nav a {
+  text-decoration: none;
+  color: white;
+  margin: 0 15px;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.primary-nav a:hover,
+.primary-nav a[aria-current="page"] {
+  color: #ffe082;
+}
+
+.site-footer {
+  margin-top: 50px;
+  text-align: center;
+  color: white;
+  font-size: 0.95rem;
+}
+
+/* ABOUT SECTION CARD */
+.about-section {
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  width: 100%;
+  max-width: 1000px;
+  padding: 50px;
+}
+
+.about-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 2.5rem;
+}
+
+/* IMAGE SIDE */
+.about-image {
+  flex: 1 1 40%;
+  display: flex;
+  justify-content: center;
+}
+
+.about-image img {
+  width: 260px;
+  height: 260px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 5px solid #667eea;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* TEXT SIDE */
+.about-content {
+  flex: 1 1 55%;
+}
+
+.about-content h1 {
+  font-size: 2rem;
+  color: #667eea;
+  margin-bottom: 1rem;
+}
+
+.about-content p {
+  color: #444;
+  line-height: 1.7;
+  margin-bottom: 1rem;
+}
+
+.about-content h2 {
+  color: #764ba2;
+  margin: 1.5rem 0 0.8rem;
+}
+
+.about-content ul {
+  margin-left: 20px;
+  color: #333;
+}
+
+.about-content li {
+  margin-bottom: 8px;
+  list-style-type: disc;
+}
+
+/* CTA Button */
+.btn-contact {
+  display: inline-block;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 0.9rem 1.6rem;
+  border-radius: 25px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  margin-top: 1rem;
+}
+
+.btn-contact:hover {
+  transform: translateY(-2px);
+  background: linear-gradient(135deg, #5b6fdc 0%, #6d41a1 100%);
+  box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 768px) {
+  body {
+    padding: 20px;
+  }
+
+  .about-section {
+    padding: 30px 20px;
+  }
+
+  .about-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .about-content {
+    text-align: center;
+  }
+
+  .about-image img {
+    width: 200px;
+    height: 200px;
+  }
+
+  .primary-nav a {
+    display: inline-block;
+    margin: 8px 10px;
+  }
+}

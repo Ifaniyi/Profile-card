@@ -1,98 +1,105 @@
+// ========================
+//  LIVE TIME DISPLAY
+// ========================
 const timeEl = document.getElementById("time");
+
 function updateTime() {
-  timeEl.textContent = Date.now();
+  if (timeEl) {
+    const now = new Date();
+    const hours = String(now.getHours()).padStart(2, "0");
+    const minutes = String(now.getMinutes()).padStart(2, "0");
+    const seconds = String(now.getSeconds()).padStart(2, "0");
+    timeEl.textContent = `${hours}:${minutes}:${seconds}`;
+  }
 }
+
 updateTime();
 setInterval(updateTime, 1000);
 
-// CONTACT FORM VALIDATION 
+// ========================
+//  FOOTER YEAR AUTO-UPDATE
+// ========================
+const yearEl = document.getElementById("year");
+if (yearEl) {
+  yearEl.textContent = new Date().getFullYear();
+}
+
+// ========================
+//  CONTACT FORM VALIDATION
+// ========================
 document.addEventListener("DOMContentLoaded", () => {
   const form = document.getElementById("contactForm");
   const formStatus = document.getElementById("formStatus");
-  const year = document.getElementById("year");
 
-  // Automatically set current year in footer
-  if (year) {
-    year.textContent = new Date().getFullYear();
-  }
+  if (!form) return; // If not on contact page, stop here
 
-  // If there's no contact form on the current page, stop here
-  if (!form) return;
-
-  // Helper functions for showing and clearing errors
+  // Helper functions
   function showError(input, message) {
-    const errorSpan = document.getElementById(${input.id}Error);
+    const errorSpan = document.getElementById(`${input.id}Error`);
     if (errorSpan) errorSpan.textContent = message;
-    input.setAttribute("aria-invalid", "true");
+    input.classList.add("input-error");
   }
 
   function clearError(input) {
-    const errorSpan = document.getElementById(${input.id}Error);
+    const errorSpan = document.getElementById(`${input.id}Error`);
     if (errorSpan) errorSpan.textContent = "";
-    input.removeAttribute("aria-invalid");
+    input.classList.remove("input-error");
   }
 
-  // Email validation pattern
   const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-  // Handle form submission
-  form.addEventListener("submit", (event) => {
-    event.preventDefault();
+  form.addEventListener("submit", (e) => {
+    e.preventDefault();
 
     const fullName = document.getElementById("fullName");
     const email = document.getElementById("email");
     const subject = document.getElementById("subject");
     const message = document.getElementById("message");
 
+    let valid = true;
     formStatus.textContent = "";
-    let isValid = true;
 
-    // Validate Full Name
+    // Full Name
     if (fullName.value.trim() === "") {
       showError(fullName, "Full name is required.");
-      isValid = false;
+      valid = false;
     } else {
       clearError(fullName);
     }
 
-    // Validate Email
+    // Email
     if (email.value.trim() === "") {
       showError(email, "Email is required.");
-      isValid = false;
+      valid = false;
     } else if (!emailPattern.test(email.value.trim())) {
-      showError(email, "Please enter a valid email (e.g., name@example.com).");
-      isValid = false;
+      showError(email, "Enter a valid email (e.g. name@example.com).");
+      valid = false;
     } else {
       clearError(email);
     }
 
-    // Validate Subject
+    // Subject
     if (subject.value.trim() === "") {
       showError(subject, "Subject is required.");
-      isValid = false;
+      valid = false;
     } else {
       clearError(subject);
     }
 
-    // Validate Message
-    if (message.value.trim() === "") {
-      showError(message, "Message is required.");
-      isValid = false;
-    } else if (message.value.trim().length < 10) {
+    // Message
+    if (message.value.trim().length < 10) {
       showError(message, "Message must be at least 10 characters long.");
-      isValid = false;
+      valid = false;
     } else {
       clearError(message);
     }
 
-    // If all valid, show success
-    if (isValid) {
-      formStatus.textContent = "✅ Thank you, Sixty! Your message has been sent successfully.";
+    if (valid) {
+      formStatus.textContent = "✅ Message sent successfully!";
       formStatus.style.color = "green";
       form.reset();
-      formStatus.focus();
     } else {
-      formStatus.textContent = "❌ Please fix the errors above and try again.";
+      formStatus.textContent = "❌ Please fix the errors and try again.";
       formStatus.style.color = "red";
     }
   });
