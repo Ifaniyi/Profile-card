@@ -3,108 +3,78 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Contact</title>
-  <link rel="stylesheet" href="/css/style.css" />
+  <title>Contact — Adebiyi Ayomide</title>
+  <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
-  <!-- Header -->
-  <header class="site-header" role="banner">
-    <nav class="primary-nav" aria-label="Main navigation">
-      <a href="index.html">Home</a>
-      <a href="about.html">About Me</a>
-      <a href="contact.html" aria-current="page">Contact</a>
-    </nav>
-  </header>
+  <nav class="site-nav" role="banner">
+    <a href="index.html" class="nav-logo">AA<span>.</span></a>
+    <ul class="nav-links" aria-label="Main navigation">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html" aria-current="page">Contact</a></li>
+    </ul>
+    <a href="contact.html" class="nav-cta">Let's talk</a>
+  </nav>
 
-  <!-- Main Contact Card -->
-  <main class="contact-card" tabindex="-1">
-    <h1>Contact Me</h1>
-    <p class="lead">Have a question or want to say hi? Fill out the form below and I’ll get back to you.</p>
-
-    <!-- Contact Form -->
-   
-<form id="contactform" class="contact-form" action="https://formspree.io/f/xgvrkywa" method="POST" novalidate aria-describedby="formInstructions formStatus">
-      <p id="formInstructions" class="sr-only">
-        All fields are required. Use Tab to navigate the form.
-      </p>
-
-      <!-- Full name -->
-      <div class="form-group">
-        <label for="fullname">Full Name</label>
-        <input
-          id="fullname"
-          name="fullname"
-          type="text"
-          required
-          aria-required="true"
-          aria-describedby="fullnameError"
-          autocomplete="name"
-          placeholder="Your full name"
-        />
-        <span id="fullnameError" class="error-message" role="alert" aria-live="assertive"></span>
+  <main class="page-body">
+    <section class="contact-section" aria-labelledby="contact-heading">
+      <div class="contact-info">
+        <p class="section-label">Contact</p>
+        <h1 id="contact-heading">Let's work together.</h1>
+        <p>Whether you have a project idea, want to collaborate, or just want to say hi — I'd love to hear from you.</p>
+        <div class="contact-socials">
+          <a href="https://github.com/Ifaniyi" target="_blank" rel="noopener noreferrer" class="social-link">
+            <div class="s-icon" style="background:#24292e;">GH</div>
+            <div><div class="s-name">GitHub</div><div class="s-handle">@Ifaniyi</div></div>
+          </a>
+          <a href="https://linkedin.com/in/adebiyiayomide" target="_blank" rel="noopener noreferrer" class="social-link">
+            <div class="s-icon" style="background:#0077b5;">in</div>
+            <div><div class="s-name">LinkedIn</div><div class="s-handle">adebiyiayomide</div></div>
+          </a>
+          <a href="https://twitter.com/adebiyiayomide" target="_blank" rel="noopener noreferrer" class="social-link">
+            <div class="s-icon" style="background:#000;">X</div>
+            <div><div class="s-name">Twitter / X</div><div class="s-handle">@adebiyiayomide</div></div>
+          </a>
+        </div>
       </div>
-
-      <!-- Email -->
-      <div class="form-group">
-        <label for="email">Email</label>
-        <input
-          id="email"
-          name="email"
-          type="email"
-          required
-          aria-required="true"
-          aria-describedby="emailError"
-          placeholder="name@example.com"
-          autocomplete="email"
-        />
-        <span id="emailError" class="error-message" role="alert" aria-live="assertive"></span>
+      <div class="contact-form-card">
+        <form id="contactForm" class="contact-form" action="https://formspree.io/f/xgvrkywa" method="POST" novalidate>
+          <div class="form-group">
+            <label for="fullname">Full Name</label>
+            <input id="fullname" name="fullname" type="text" required placeholder="Your full name" />
+            <span id="fullnameError" class="error-message" role="alert"></span>
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" required placeholder="name@example.com" />
+            <span id="emailError" class="error-message" role="alert"></span>
+          </div>
+          <div class="form-group">
+            <label for="subject">Subject</label>
+            <input id="subject" name="subject" type="text" required placeholder="What is this about?" />
+            <span id="subjectError" class="error-message" role="alert"></span>
+          </div>
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="5" required placeholder="Write at least 10 characters..."></textarea>
+            <span id="messageError" class="error-message" role="alert"></span>
+          </div>
+          <button type="submit" id="submitBtn" class="btn-primary" style="width:100%;text-align:center;border:none;">
+            Send Message →
+          </button>
+          <div id="formStatus" role="alert" aria-live="assertive"></div>
+        </form>
       </div>
-
-      <!-- Subject -->
-      <div class="form-group">
-        <label for="subject">Subject</label>
-        <input
-          id="subject"
-          name="subject"
-          type="text"
-          required
-          aria-required="true"
-          aria-describedby="subjectError"
-          placeholder="What is this about?"
-        />
-        <span id="subjectError" class="error-message" role="alert" aria-live="assertive"></span>
-      </div>
-
-      <!-- Message -->
-      <div class="form-group">
-        <label for="message">Message</label>
-        <textarea
-          id="message"
-          name="message"
-          rows="6"
-          required
-          aria-required="true"
-          aria-describedby="messageError"
-          placeholder="Write at least 10 characters..."
-        ></textarea>
-        <span id="messageError" class="error-message" role="alert" aria-live="assertive"></span>
-      </div>
-
-      <!-- Submit Button -->
-      <div class="form-actions">
-        <button type="submit" id="submitBtn">Send Message</button>
-      </div>
-
-      <!-- Success or Error Message -->
-      <div id="formStatus" role="alert" aria-live="assertive"></div>
-    </form>
+    </section>
   </main>
 
-  <!-- Footer -->
   <footer class="site-footer">
-    <p>&copy; 2025 <span>Adebiyi Ayomide</span></p>
+    <a href="index.html" class="footer-logo">AA<span>.</span></a>
+    <p>© <span id="year"></span> Adebiyi Ayomide</p>
+    <p>Built with HTML &amp; CSS</p>
   </footer>
 
-  <script src="/js/script.js"></script>
+  <script src="js/script.js"></script>
 </body>
 </html>
